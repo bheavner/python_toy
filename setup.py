@@ -1,9 +1,15 @@
+# -*- coding: utf-8 -*-
+"""Sphinx-generated setup
+
+I'm adding this docstring to satisfy pylint
+"""
+
 try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
 
-config = {
+CONFIG = {
     'description': 'My Toy Python Project',
     'author': 'Ben Heavner',
     'url': 'https://github.com/bheavner/python_toy',
@@ -16,5 +22,4 @@ config = {
     'name': 'python_toy'
 }
 
-setup(**config)
-
+setup(**CONFIG)
