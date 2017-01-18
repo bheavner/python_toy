@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf-7 -*-
 """Sphinx-generated setup
 
 I'm adding this docstring to satisfy pylint
