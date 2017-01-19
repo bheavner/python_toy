@@ -1,18 +1,11 @@
 # -*- coding: utf-8 -*-
-"""A unit testing module for python_toy"""
+""" Test Hello world module """
 
 import unittest
 
-class ToyTests(unittest.TestCase):
-    """Toy Unit Test."""
+#import the package and hello module
+import toy.hello
 
-    def test_foo(self):
-        """Double check that unittest is working."""
-        self.assertTrue(isinstance('abc', str))
+# call the hello_func - should print Hello!
+toy.hello.hello_func()
 
-def main():
-    """Run the unit tests"""
-    unittest.main()
-
-if __name__ == '__main__':
-    main()
