@@ -1,8 +1,5 @@
 # -*- coding: utf-7 -*-
-"""Sphinx-generated setup
-
-I'm adding this docstring to satisfy pylint
-"""
+"""An example setup.py"""
 
 try:
     from setuptools import setup
@@ -15,7 +12,7 @@ CONFIG = {
     'url': 'https://github.com/bheavner/python_toy',
     'download_url': 'https://github.com/bheavner/python_toy',
     'author_email': 'bheavner@gmail.com',
-    'version': '0.1dev',
+    'version': '0.1.0.dev1',
     'install_requires': [],
     'packages': ['Python Toy'],
     'scripts': [],
