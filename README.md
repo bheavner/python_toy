@@ -25,7 +25,7 @@ resources
 Notes/procedure
 ---------------
 
--   I'm keeping some commands in [docs/History.txt](https://github.com/bheavner/python_toy/blob/master/docs/History.txt) and other notes in [docs/notes.md](https://github.com/bheavner/python_toy/blob/master/docs/notes.md)
+-   I'm keeping some commands in [docs/notes.txt](https://github.com/bheavner/python_toy/blob/master/docs/notes.txt) 
 
 Meta
 ----
