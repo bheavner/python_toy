@@ -22,6 +22,7 @@ vi setup.py
 # - use versioning from here: https://packaging.python.org/distributing/#choosing-a-versioning-scheme - so start with 0.1.0.dev1
 
 pip install pylint
+pip install coverage
 pylint setup.py
 
 pip freeze >> requirements.txt
@@ -86,12 +87,12 @@ vi toy/hello.py
 """Hello world module"""
 
 def hello_func():
-    """print 'Hello!'"""
+    ""return 'Hello!'"""
     return "Hello!"
 
 def main():
-    """run hello_func"""
-    hello_func()
+    """print 'Hello!' by running hello_func"""
+    print(hello_func())
 
 if __name__ == '__main__':
     main()
@@ -125,7 +126,12 @@ if __name__ == '__main__':
 
 # pylint gives this 10.0, and the test passes!
 
-And the tree of the project looks like this:
+# use coverage to check that all the lines of code are executed - useful for testing (in a complicated way that merits more thought)
+
+coverage run -m toy.hello
+coverage report -m
+
+# And the tree of the project looks like this:
 
 .
 ├── LICENSE.txt
