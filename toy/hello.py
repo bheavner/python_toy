@@ -3,7 +3,7 @@
 
 def hello_func():
     """print 'Hello!'"""
-    print("Hello!")
+    return("Hello!")
 
 def main():
     """run hello_func"""
