@@ -1,9 +1,8 @@
-# -*- coding: utf-8 -*-
 """Hello world module"""
 
 def hello_func():
     """print 'Hello!'"""
-    return("Hello!")
+    return "Hello!"
 
 def main():
     """run hello_func"""

@@ -1,0 +1,143 @@
+mkvirtualenv python_toy
+mkdproject python_toy
+
+# or, make git repostitory first, then
+cd $PROJECT_HOME
+git clone https://github.com/<USERNAME>/python_toy.git
+setvirtualenvproject ~/virtualenv/python_toy $PROJECT_HOME/python_toy
+
+mkdir toy tests 
+
+<copy .gitignore from another python repository if you didn't make on github>
+<copy desired LICENSE.txt from here or another place you like>
+
+touch toy/__init__.py 
+touch tests/__init__.py 
+
+vi setup.py
+
+# copy content from https://learnpythonthehardway.org/book/ex46.html but note changes for python 3 and lint:
+# - add docstring
+# - constants should be all upper, so CONFIG, not config
+# - use versioning from here: https://packaging.python.org/distributing/#choosing-a-versioning-scheme - so start with 0.1.0.dev1
+
+pip install pylint
+pylint setup.py
+
+pip freeze >> requirements.txt
+
+# Now we're ready to start working - begin by making a test to check unittest framework:
+vi tests/test_unittest.py
+
+# Here's a first test:
+
+"""A unit testing module to confirm unittest is working"""
+
+import unittest
+
+class UnitTestTests(unittest.TestCase):
+    """Test Unit Test."""
+
+    def test_unittest(self):
+        """Double check that unittest is working."""
+        self.assertTrue(False)
+
+if __name__ == '__main__':
+    unittest.main()
+
+# run lint on the test
+pylint tests/test_unittest.py
+
+# should get a warning "Redundant use of assertTrue" and a score of 8.33
+
+# run tests
+# either a single test file:
+python tests/test_unittest.py
+
+# or discover all the tests in the package:
+python -m unittest
+
+# now we know unittest is working, so make fix test_unittest (make self.assertTrue(True)), and we can start working on a real task - to make a method returnign the string "Hello World!".
+
+# begin with a new test.
+vi tests/test_toy
+
+# maybe something like this:
+"""Testing the toy hello world method """
+
+import unittest
+
+class UnitTestTests(unittest.TestCase):
+    """Test Unit Test."""
+
+    def test_matches(self):
+        """toy.hello_func() should return 'Hello!'"""
+        self.assertTrue(toy.hello_func() == 'Hello!')
+
+if __name__ == '__main__':
+    unittest.main()
+
+ 
+# when I lint this (pylint tests/test_toy), I get an undefined variable error, and a score of 1.67. When I run the test (python tests/test_toy.py), it fails with a NameError. That's good, since I haven't written hello yet or imported it. So, let's write a hello.py module in the toy package:
+
+vi toy/hello.py
+
+# maybe something like this:
+"""Hello world module"""
+
+def hello_func():
+    """print 'Hello!'"""
+    return "Hello!"
+
+def main():
+    """run hello_func"""
+    hello_func()
+
+if __name__ == '__main__':
+    main()
+
+# Pylint gives this 10.0, but the test still fails because the name isn't defined - we need to import the module to the test. There are many ways to do that. I want to be able to import all my methods from toy (so I can do 'import toy' and then do things like 'toy.hello_func(), so I'll add an import statment to /toy/__init__.py (see http://mikegrouchy.com/blog/2012/05/be-pythonic-__init__py.html, for example):
+
+vi toy/__init__.py
+
+"""enable 'import toy' for 'toy.hello_func()'"""
+from toy.hello import hello_func
+
+# run lint on it (10/10)
+
+# now I can get the test working by adding an 'import toy' after the 'import unittest':
+
+"""Testing the toy hello world method """
+
+import unittest
+import toy
+
+class UnitTestTests(unittest.TestCase):
+    """Test Unit Test."""
+
+    def test_matches(self):
+        """toy.hello_func() should return 'Hello!'"""
+        self.assertTrue(toy.hello_func() == 'Hello!')
+
+if __name__ == '__main__':
+    unittest.main()
+
+
+# pylint gives this 10.0, and the test passes!
+
+And the tree of the project looks like this:
+
+.
+├── LICENSE.txt
+├── README.md
+├── docs
+│   └── notes.txt
+├── requirements.txt
+├── setup.py
+├── tests
+│   ├── __init__.py
+│   ├── test_toy.py
+│   └── test_unittest.py
+└── toy
+    ├── __init__.py
+    └── hello.py

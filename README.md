@@ -14,6 +14,7 @@ resources
 -   [Python Packaging User Guide](https://packaging.python.org/)
 -   [PyPUG sample project](https://github.com/pypa/sampleproject)
 -   [Comprehensive Guide to Python Packaging](http://foobar.lu/wp/2012/05/13/a-comprehensive-step-through-python-packaging-a-k-a-setup-scripts/)
+-   [Be Pythonic: __init__.py](http://mikegrouchy.com/blog/2012/05/be-pythonic-__init__py.html)
 -   [Test-driven development in Python](http://www.onlamp.com/pub/a/python/2004/12/02/tdd_pyunit.html)
 -   [unittest introduction](http://pythontesting.net/framework/unittest/unittest-introduction/)
 -   [unittest docs](https://docs.python.org/3/library/unittest.html)
