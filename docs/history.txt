@@ -1,0 +1,26 @@
+mkvirtualenv python_toy
+mkdproject python_toy
+
+# or, make git repostitory first, then
+cd $PROJECT_HOME
+git clone https://github.com/<USERNAME>/python_toy.git
+setvirtualenvproject ~/virtualenv/python_toy $PROJECT_HOME/python_toy
+
+mkdir toy tests 
+
+<copy .gitignore from another python repository if you didn't make on github>
+<copy desired LICENSE.txt from here or another place you like>
+
+touch toy/__init__.py 
+touch tests/__init__.py 
+
+vi setup.py
+
+# copy content from https://learnpythonthehardway.org/book/ex46.html but note changes for python 3 and lint:
+# - add docstring
+# - constants should be all upper, so CONFIG, not config
+# - use versioning from here: https://packaging.python.org/distributing/#choosing-a-versioning-scheme - so start with 0.1.0.dev1
+
+pylint setup.py
+
+pip freeze >> requirements.txt
