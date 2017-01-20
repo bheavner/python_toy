@@ -21,6 +21,39 @@ vi setup.py
 # - constants should be all upper, so CONFIG, not config
 # - use versioning from here: https://packaging.python.org/distributing/#choosing-a-versioning-scheme - so start with 0.1.0.dev1
 
+pip install pylint
 pylint setup.py
 
 pip freeze >> requirements.txt
+
+# Now we're ready to start working - begin by making a test to check unittest framework:
+vi tests/test_toy.py
+
+# Here's a first test:
+
+# -*- coding: utf-8 -*-   
+"""A unit testing module for python_toy"""
+
+import unittest
+
+class ToyTests(unittest.TestCase):
+    """Toy Unit Test."""
+
+    def test_unittest(self):
+        """Double check that unittest is working."""
+        self.assertTrue(False)
+
+if __name__ == '__main__':
+    unittest.main()
+
+# run lint on the test
+pylint tests/test_toy.py
+
+# should get a warning "Redundant use of assertTrue" and a score of 8.33
+
+# run tests
+# either a single test file:
+python tests/test_toy.py
+
+# or discover all the tests in the package:
+python -m unittest

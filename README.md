@@ -13,6 +13,11 @@ resources
 -   [Hitchhiker's Guide to Python Virtual Environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
 -   [Python Packaging User Guide](https://packaging.python.org/)
 -   [PyPUG sample project](https://github.com/pypa/sampleproject)
+-   [Comprehensive Guide to Python Packaging](http://foobar.lu/wp/2012/05/13/a-comprehensive-step-through-python-packaging-a-k-a-setup-scripts/)
+-   [Test-driven development in Python](http://www.onlamp.com/pub/a/python/2004/12/02/tdd_pyunit.html)
+-   [unittest introduction](http://pythontesting.net/framework/unittest/unittest-introduction/)
+-   [unittest docs](https://docs.python.org/3/library/unittest.html)
+-   [Ned Blatchelder's PyCon2014 talk and slides - "Getting Started Testing"](http://nedbatchelder.com/text/test0.html)
 -   [How To Use Coverage.py With Unittest](https://github.com/audreyr/how-to/blob/master/python/use_coverage_with_unittest.rst)
 -   perhaps [pyOpenSci](https://github.com/pyOpenSci/) will eventually be like [rOpenSci](https://github.com/rOpenSci/)
 

@@ -14,7 +14,7 @@ CONFIG = {
     'author_email': 'bheavner@gmail.com',
     'version': '0.1.0.dev1',
     'install_requires': [],
-    'packages': ['Python Toy'],
+    'packages': ['toy'],
     'scripts': [],
     'name': 'python_toy'
 }
