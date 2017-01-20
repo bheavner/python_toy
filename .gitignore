@@ -1,5 +1,7 @@
-# vi swap files
-# *.swp
+# vi-related files
+*~
+*.swp
+*.swo
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
